@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <link rel="stylesheet" href="build/main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <label class="label">Post</label>
+    <p class="control">
+      <textarea id='post' class="textarea" placeholder="Textarea"></textarea>
+    </p>
+    <div class="columns">
+      <a class='button' onclick="execute()">Post</a>
+    </div>
+    <div class="columns">
+      <webview height="750px" id='webview' preload='js/preload.js' src="https://www.facebook.com/groups/1057061244373784/"></webview>
+    </div>
+    <script src="build/bundle.js" charset="utf-8"></script>
   </body>
 </html>
